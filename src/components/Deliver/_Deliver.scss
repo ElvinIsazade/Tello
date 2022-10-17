@@ -1,0 +1,36 @@
+.cube {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {}
+
+    p {}
+}
+
+.cube_wrapper {
+    justify-content: center;
+    height: 330px;
+    align-items: center;
+}
+
+@media screen and (max-width : 576px) {
+    p {
+        text-align: center;
+    }
+
+    .cube_wrapper {
+        justify-content: center;
+        height: 670px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .cube_wrapper {
+        justify-content: center;
+        height: 548px;
+        align-items: center;
+    }
+}

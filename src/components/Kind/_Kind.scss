@@ -1,0 +1,138 @@
+.head_back {
+    background-color: #E4E9F2;
+    padding: 30px;
+
+    .product_name {
+        h3 {}
+
+        p {}
+
+        .product_link {}
+    }
+
+    .product_image {
+        margin-top: 115px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.watches {
+    background-color: #E4E9F2;
+    padding: 30px;
+    height: 352px;
+    position: relative;
+
+    .product_name {
+        h3 {}
+
+        p {}
+
+        .product_link {}
+    }
+
+    .watches_image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+    }
+}
+
+.accessories {
+    background-color: #E4E9F2;
+    padding: 30px;
+    height: 352px;
+    position: relative;
+    margin-top: 25px;
+
+    .product_name {
+        h3 {}
+
+        p {}
+
+        .product_link {}
+    }
+
+    .accessories_image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media screen and (max-width : 576px) {
+    .head_back {
+        margin-bottom: 15px;
+
+        .product_name {
+            h3 {}
+
+            p {
+                text-align: start;
+            }
+
+            .product_link {}
+        }
+
+        .product_image {
+            margin-top: 115px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .watches_back {
+        padding: 0;
+    }
+
+    .watches {
+        background-color: #E4E9F2;
+        padding: 30px;
+        height: 352px;
+        position: relative;
+
+        .product_name {
+            h3 {}
+
+            p {
+                text-align: start;
+
+            }
+
+            .product_link {}
+        }
+
+        .watches_image {
+
+            width: 60%;
+        }
+    }
+
+    .accessories {
+        background-color: #E4E9F2;
+        padding: 30px;
+        height: 352px;
+        position: relative;
+        margin-top: 25px;
+
+        .product_name {
+            h3 {}
+
+            p {
+                text-align: start;
+
+            }
+
+            .product_link {}
+        }
+
+        .accessories_image {
+            width: 70%;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+.footer_wrapper{
+    background-color: #262626;
+    color: #fff;
+    padding: 40px 0px;
+    .line{
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            .logo_image{
+
+            }
+            .logo_text{
+                margin: 0;
+                color: #2DD06E;
+                font-size: 34px;
+            }
+        }
+        .social{
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+            padding: 0;
+            gap: 30px;
+            .social_item{
+                .social_link{
+                    color: #fff;
+                }
+            }
+        }
+        .menu_title{
+
+        }
+        .menu_list{
+            list-style-type: none;
+            padding: 0;
+            .menu_item{
+                margin-bottom: 10px;
+                .menu_link{
+                    text-decoration: none;
+                    color: #fff;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    .copy{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        .law{
+            opacity: 0.8;
+        }
+        .rules{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            opacity: 0.8;
+        }
+    }
+}
+@media screen and (max-width : 576px){
+    .footer_wrapper{
+        background-color: #262626;
+        color: #fff;
+        padding: 40px 0px;
+        .line{
+            text-align: center;
+            .logo{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: center;
+                .logo_image{
+    
+                }
+                .logo_text{
+                    margin: 0;
+                    color: #2DD06E;
+                    font-size: 34px;
+                }
+            }
+            .social{
+                display: flex;
+                list-style-type: none;
+                align-items: center;
+                padding: 0;
+                gap: 30px;
+                justify-content: center;
+                .social_item{
+                    .social_link{
+                        color: #fff;
+                    }
+                }
+            }
+            .menu_title{
+    
+            }
+            .menu_list{
+                list-style-type: none;
+                padding: 0;
+
+                .menu_item{
+                    margin-bottom: 10px;
+                    .menu_link{
+                        text-decoration: none;
+                        color: #fff;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+        .copy{
+            
+            justify-content: center;
+            .law{
+                opacity: 0.8;
+            }
+            .rules{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                opacity: 0.8;
+                justify-content: center;
+            }
+        }
+    }
+}

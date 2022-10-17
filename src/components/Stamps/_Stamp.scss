@@ -1,0 +1,57 @@
+.stamp_wrapper {
+    background-color: #F5F5F7;
+    padding: 50px;
+
+    .stamp_image {
+        width: 100%;
+        background-color: #fff;
+        padding: 14px 34px;
+
+        .image {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width : 576px) {
+    .stamp_wrapper {
+        height: 300px;
+
+        .swiper-wrapper {
+            height: 238px;
+        }
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .stamp_wrapper {
+        height: 300px;
+
+        .swiper-wrapper {
+            height: 190px;
+        }
+
+        .swiper-pagination {
+            width: 111% !important;
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .swiper-container {
+        width: 576px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .swiper-container {
+        width: 768px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .swiper-container {
+        width: 992px;
+    }
+}

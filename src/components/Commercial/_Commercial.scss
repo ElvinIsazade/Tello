@@ -1,0 +1,227 @@
+.commercial_wrapper {
+    .commercial_first {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+
+        .commercial_info {
+            .need {}
+
+            .commercial_price {
+
+                font-weight: 700;
+            }
+
+            .percent {
+                color: gray;
+            }
+
+            .buy {
+                border: 1px solid black;
+                border-radius: 14px;
+                color: gray;
+                background-color: transparent;
+            }
+        }
+
+        .commercial_image {
+            img {}
+        }
+    }
+
+    .commercial_second {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #E4E9F2;
+        padding: 15px;
+
+        .commercial_info_second {
+            text-align: center;
+
+            .apple {}
+
+            .find {}
+
+            .money {
+                span {
+                    font-size: 25px;
+                }
+            }
+
+            .buy_now {
+                border: 1px solid black;
+                border-radius: 14px;
+                color: gray;
+                background-color: transparent;
+            }
+        }
+
+        .commercial_image_second {
+            img {}
+        }
+    }
+}
+
+@media screen and (max-width : 576px) {
+    .commercial_wrapper {
+        .commercial_first {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+
+            .commercial_info {
+                text-align: center;
+
+                .need {
+                    font-size: 17px;
+                }
+
+                .commercial_price {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+
+                .percent {
+                    color: gray;
+                    font-size: 14px;
+                }
+
+                .buy {
+                    border: 1px solid black;
+                    border-radius: 14px;
+                    color: gray;
+                    background-color: transparent;
+                }
+            }
+
+            .commercial_image {
+                img {}
+            }
+        }
+
+        .commercial_second {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E4E9F2;
+            padding: 15px;
+
+            .commercial_info_second {
+                text-align: center;
+
+                .apple {
+                    font-size: 14px;
+                }
+
+                .find {
+                    font-size: 14px;
+                }
+
+                .money {
+                    span {
+                        font-size: 15px;
+                    }
+                }
+
+                .buy_now {
+                    border: 1px solid black;
+                    border-radius: 14px;
+                    color: gray;
+                    background-color: transparent;
+                }
+            }
+
+            .commercial_image_second {
+                img {}
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 281px) {
+    .commercial_wrapper {
+        .commercial_first {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+
+            .commercial_info {
+                text-align: center;
+
+                .need {
+                    font-size: 12px;
+                }
+
+                .commercial_price {
+                    font-size: 12px;
+                    font-weight: 700;
+                }
+
+                .percent {
+                    color: gray;
+                    font-size: 12px;
+                }
+
+                .buy {
+                    border: 1px solid black;
+                    border-radius: 14px;
+                    color: gray;
+                    background-color: transparent;
+                    font-size: 9px;
+                }
+            }
+
+            .commercial_image {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .commercial_second {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E4E9F2;
+            padding: 15px;
+
+            .commercial_info_second {
+                text-align: center;
+
+                .apple {
+                    font-size: 12px;
+                }
+
+                .find {
+                    font-size: 12px;
+                }
+
+                .money {
+                    font-size: 10px;
+
+                    span {
+                        font-size: 10px;
+                    }
+                }
+
+                .buy_now {
+                    border: 1px solid black;
+                    border-radius: 14px;
+                    color: gray;
+                    background-color: transparent;
+                    font-size: 11px;
+                }
+            }
+
+            .commercial_image_second {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

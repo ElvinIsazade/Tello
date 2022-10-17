@@ -1,0 +1,297 @@
+@import "../../sass/variables.scss";
+
+.header {
+    padding: 17px;
+    border-bottom: 1px solid $primary_color;
+
+    .hamburger {
+        display: none;
+
+        .menu_button {
+            border: none;
+            background-color: transparent;
+            font-size: 22px;
+        }
+    }
+
+    .logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .logo_text {
+            margin: 0;
+            color: $primary_color;
+            font-size: 34px;
+            margin-left: 10px;
+        }
+    }
+
+    .search_wrapper {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+
+        .search_input {
+            width: 100%;
+            background: #F2F2F2;
+            border: none;
+            border-radius: 5px;
+            padding: 4px 4px 4px 30px;
+            outline: none;
+        }
+
+        .search_product_list_wrapper {
+            list-style-type: none;
+            padding-left: 0;
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 100%;
+            background-color: ghostwhite;
+            height: 300px;
+            z-index: 999;
+            overflow-y: auto;
+            display: block;
+
+            .search_product_list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid black;
+                padding: 15px;
+                cursor: pointer;
+                transition: all 0.5s;
+
+                &:hover {
+                    background-color: #8080802e;
+                }
+
+                .search_product_link {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                .item_picture {
+                    width: 131px;
+                    height: 131px;
+                    object-fit: contain;
+                    height: 90px;
+                }
+
+                .item_price {
+                    color: #DB2C66;
+                }
+            }
+        }
+
+        .search_icon {
+            position: absolute;
+            top: 9px;
+            left: 8px;
+            color: darkgray;
+        }
+    }
+}
+
+.icon_wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 23px;
+
+    .user,
+    .heart,
+    .shopping {
+        cursor: pointer;
+    }
+
+    .shopping {
+        position: relative;
+
+        .badge {
+            background-color: $primary_color;
+            color: #fff;
+            border-radius: 100%;
+            padding: 3px;
+            position: absolute;
+            right: -22px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            line-height: 12px;
+            text-align: center;
+        }
+    }
+
+    .heart {
+        position: relative;
+
+        .heart_count {
+            background-color: #2DD06E;
+            color: #fff;
+            border-radius: 100%;
+            padding: 3px;
+            position: absolute;
+            right: -22px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            line-height: 12px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+}
+
+.choices {
+    margin-top: 15px;
+
+    .choices_list {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding-left: 0;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 50px;
+
+        .choice_link {
+            text-decoration: none;
+            color: #4F4F4F;
+        }
+    }
+}
+
+
+@media screen and (max-width : 992px) {
+    .choices {
+        .choices_list {
+            gap: 28px;
+        }
+    }
+}
+
+@media screen and (max-width : 576px) {
+    .header {
+        padding: 25px;
+
+        .logo {
+            justify-content: center;
+        }
+
+        .search_layout {
+            position: absolute;
+            top: 79px;
+            width: 92%;
+        }
+
+        .hamburger {
+            display: block;
+
+            .menu_button {
+                position: absolute;
+                top: 30px;
+            }
+        }
+
+    }
+
+    .choices {
+        margin-top: 15px;
+
+        .choices_list {
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            top: 80px;
+            left: -590px;
+            gap: 22px;
+            height: 318px;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 20px;
+            transition: all 0.5s;
+            background-color: #f1f1f1;
+        }
+
+        .choices_list.active {
+            left: 0px;
+            z-index: 9999999;
+            top: 80px;
+        }
+    }
+}
+
+@media screen and (max-width : 321px) {
+    .header {
+        padding: 25px;
+
+        .logo {
+            justify-content: center;
+        }
+
+        .search_layout {
+            position: absolute;
+            top: 79px;
+            width: 95%;
+            left: 0px;
+        }
+
+        .hamburger {
+            display: block;
+
+            .menu_button {
+                position: absolute;
+                top: 30px;
+                left: 0px;
+            }
+        }
+
+        .icon_wrapper {
+            gap: 10px;
+
+            .shopping {
+                left: 19px;
+            }
+
+        }
+
+    }
+
+    .choices {
+        margin-top: 15px;
+
+        .choices_list {
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            top: 80px;
+            left: -510px;
+            gap: 22px;
+            height: 318px;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 20px;
+            transition: all 0.5s;
+            background-color: #f1f1f1;
+        }
+
+        .choices_list.active {
+            left: 0px;
+            z-index: 9999999;
+            top: 80px;
+        }
+    }
+}
+
+@media screen and (max-width : 281px) {
+    .header {
+        .icon_wrapper {
+            gap: 3px;
+        }
+    }
+}

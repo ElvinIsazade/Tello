@@ -1,0 +1,72 @@
+.phones {
+    background-image: url("../../img/background_picture.png");
+
+    .buy_sell_wrapper {
+        padding-top: 60px;
+
+        .add {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .main_header {
+                font-weight: 700;
+            }
+
+            .main_header_second {
+                font-weight: 700;
+            }
+
+            .buy_sell_content {
+                color: gray;
+            }
+        }
+
+        .example_phone {
+            width: 100%;
+
+            .phones_image {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .phones {
+        background-image: url("../../img/background_picture.png");
+
+        .buy_sell_wrapper {
+            padding-top: 60px;
+
+            .add {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .main_header {
+                    font-weight: 700;
+                    text-align: center;
+                }
+
+                .main_header_second {
+                    font-weight: 700;
+                    text-align: center;
+                }
+
+                .buy_sell_content {
+                    color: gray;
+                    text-align: center;
+                }
+            }
+
+            .example_phone {
+                width: 100%;
+
+                .phones_image {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
