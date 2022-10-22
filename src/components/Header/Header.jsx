@@ -93,7 +93,6 @@ const Header = ({ showInfo, isLoggedIn, setISLogginIn }) => {
     useEffect(() => {
         categoryList()
     }, [])
-    console.log(isLoggedIn);
 
     return (
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 
 // React_Router_Dom
-import { Routes, Route,useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, json } from "react-router-dom";
 
 // Components
 import Header from "./components/Header/Header";
@@ -38,44 +38,52 @@ const App = () => {
   const navigate = useNavigate();
 
 
-  const showInfo = (id)=>{
+  const showInfo = (id) => {
     console.log("yes");
     navigate(`/${id}`);
   }
   const dispatch = useDispatch();
 
+  const [isLoggedIn, setISLogginIn] = useState(localStorage.getItem("commercejs_customer_token") ? true : false)
 
-  const [isLoggedIn,setISLogginIn] = useState(commerce.customer.isLoggedIn())
 
+  useEffect(() => {
+    console.log(isLoggedIn)
+ 
+  }, [isLoggedIn])
+  
+  window.addEventListener('storage', () => {
+    console.log('first');
+    setISLogginIn(localStorage.getItem("commercejs_customer_token") ? true : false)
+  })
   return (
-    
+
     <div className="App">
       <Fragment>
-      <Header showInfo={showInfo} isLoggedIn={isLoggedIn} setISLogginIn={setISLogginIn} />
+        <Header showInfo={showInfo} isLoggedIn={isLoggedIn} setISLogginIn={setISLogginIn} />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<HomePage showInfo={showInfo} />} />
+          <Route path="/favorites" element={<FavoriteCart />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/:info" element={<CardDetail />} />
+          <Route path="/apple" element={<Apple showInfo={showInfo} />} />
+          <Route path="/samsung" element={<Samsung showInfo={showInfo} />} />
+          <Route path="/xiaomi" element={<Xiaomi showInfo={showInfo} />} />
+          <Route path="/phones" element={<Phones showInfo={showInfo} />} />
+          <Route path="/watches" element={<AllWatches showInfo={showInfo} />} />
+          <Route path="/accessories" element={<AllAcessories showInfo={showInfo} />} />
+          <Route path="/generate-token/:token" element={<GenerateToken />} />
+          <Route path="/allProducts" element={<OnlyPhones showInfo={showInfo} />} />
+          <Route path="/order" element={<Order setISLogginIn={setISLogginIn} />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
 
-      <Routes>
-        <Route path="/login" element={<Login  setISLogginIn={setISLogginIn} isLoggedIn={isLoggedIn} />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<HomePage showInfo={showInfo} />} />
-        <Route path="/favorites" element={<FavoriteCart />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/:info" element={<CardDetail />} />
-        <Route path="/apple" element={<Apple showInfo={showInfo} />} />
-        <Route path="/samsung" element={<Samsung showInfo={showInfo}  />} />
-        <Route path="/xiaomi" element={<Xiaomi showInfo={showInfo}  />} />
-        <Route path="/phones" element={<Phones showInfo={showInfo}  />} />
-        <Route path="/watches" element={<AllWatches showInfo={showInfo}  />} />
-        <Route path="/accessories" element={<AllAcessories showInfo={showInfo}  />} />
-        <Route path="/generate-token/:token" element={<GenerateToken />}  setISLogginIn={setISLogginIn} />
-        <Route path="/allProducts" element={<OnlyPhones showInfo={showInfo}  />} />
-        <Route path="/order" element={<Order setISLogginIn={setISLogginIn} />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-
-      <Footer />
-    </Fragment>
+        <Footer />
+      </Fragment>
     </div>
-    
+
   );
 }
 

@@ -20,7 +20,7 @@ const schema = yup.object().shape({
     password: yup.string().min(4).max(10).required("Sifre yazilmalidir")
 })
 
-const Login = ({ setISLogginIn, isLoggedIn }) => {
+const Login = ({ setISLogginIn }) => {
     const [showPassword, setShowPassword] = useState(false);
     const dispatch = useDispatch()
 

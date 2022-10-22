@@ -9,16 +9,22 @@ import ReactPaginate from "react-paginate";
 import { fetchPageData } from "../../store/reducers/actions/pageActions";
 import { addToFavorite } from '../../store/reducers/favoriteReducer';
 import { AiFillHeart } from "react-icons/ai";
-
+import { getCategoryList } from '../../store/reducers/actions/categoryListActions';
 import { toast } from "react-toastify";
 import Toastify from '../../components/Toastify/Toastify';
+import { commerce } from '../../helpers/Commerce';
+import CheckBox from '../../components/CheckBox/CheckBox';
 
 
 const Phones = ({ showInfo }) => {
     const [showCategory, setShowCategory] = useState(false);
     const [showdecPrice, setDecPrice] = useState(false);
+    const [checked,setChecked] = useState(false)
 
     const { pageProducts } = useSelector((state) => state.page);
+
+    const { listProducts } = useSelector(state => state.category)
+    // console.log(listProducts);
 
     const dispatch = useDispatch();
 
@@ -28,6 +34,7 @@ const Phones = ({ showInfo }) => {
 
     useEffect(() => {
         dispatch(fetchPageData())
+        dispatch(getCategoryList())
     }, [dispatch])
 
 
@@ -66,6 +73,24 @@ const Phones = ({ showInfo }) => {
         let currentPage = data.selected + 1;
         dispatch(fetchPageData(currentPage))
     }
+    
+
+    const handleToggle = async(e)=> {
+        commerce.products.list({
+            category_slug: [e.target.name],
+        }).then(response => console.log(response.data))
+        const response = await commerce.products.list({
+            category_slug : [e.target.name],
+        })
+        const data = response.data;
+        console.log(data);
+        
+    }
+    
+    
+    
+    
+    // console.log(listProducts);
 
     return (
         <>
@@ -84,18 +109,26 @@ const Phones = ({ showInfo }) => {
                                         </div>
                                         {
                                             <div className={`accordion_content ${showCategory ? "active" : null}`}>
-                                                <div className="apple_check">
-                                                    <input type="checkbox" name="apple" id="apple" />
-                                                    <label className='apple_text' htmlFor="apple">Apple</label>
-                                                </div>
-                                                <div className="samsung_check">
-                                                    <input type="checkbox" name="samsung" id="samsung" />
-                                                    <label className='samsung_text' htmlFor="samsung">Samsung</label>
-                                                </div>
-                                                <div className="xiaomi_check">
-                                                    <input type="checkbox" name="xiaomi" id="xiaomi" />
-                                                    <label htmlFor="xiaomi" className='xiaomi_text'>Xiaomi</label>
-                                                </div>
+                                                
+                                                {
+                                                    listProducts?.map(data => {
+                                                        if (data.slug === "telefonlar") {
+                                                            return data.children.map(child => {
+                                                                // console.log(child);
+                                                                return <div className="apple_check" key={child.id}>
+                                                                    <input type="checkbox"
+                                                                        name={child.slug}
+                                                                        id={child.id}
+                                                                        onChange={(e)=>handleToggle(e)}
+
+                                                                    />
+                                                                    <label className='apple_text' htmlFor="apple">{child.slug}</label>
+                                                                </div>
+                                                            })
+                                                        }
+                                                    })
+                                                }
+
                                             </div>
                                         }
                                     </div>

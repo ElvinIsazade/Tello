@@ -1,13 +1,16 @@
-import React,{useEffect} from 'react';
-import {useParams, useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom'
 import { commerce } from '../../helpers/Commerce';
 import Loader from '../Loader/Loader';
-function GenerateToken({ setISLogginIn}) {
+function GenerateToken({ setISLogginIn }) {
     let navigate = useNavigate();
-    let {token}  = useParams();
+    let { token } = useParams();
     useEffect(() => {
         window.scrollTo(0, 0);
-        commerce.customer.getToken(`${token}`, 'save= true' ).then((jwt) => {navigate("/order", { replace: true })});
+        commerce.customer.getToken(`${token}`, 'save= true').then((jwt) => {
+            navigate("/order");
+            window.dispatchEvent(new Event("storage"));
+        });
         // setISLogginIn(true)
     }, [token, navigate])
     return (

@@ -10,7 +10,9 @@ import { Link } from 'react-router-dom';
 const Order = ({ setISLogginIn }) => {
 
     const logout = () => {
-        commerce.customer.logout()
+        commerce.customer.logout();
+        setISLogginIn(false);
+        localStorage.removeItem("commercejs_customer_token")
     }
 
     return (

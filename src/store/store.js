@@ -4,13 +4,14 @@ import basketReducers from "./reducers/basketReducers";
 import pageReducer from "./reducers/pageReducer";
 import favoriteReducer from "./reducers/favoriteReducer";
 import authReducer from "./reducers/authReducer";
-
+import categoryReducer from "./reducers/categoryReducer";
 export const store = configureStore ({
     reducer :{
         products : productsReducer,
         basket : basketReducers,
         page : pageReducer,
         favorite : favoriteReducer,
-        user : authReducer
+        user : authReducer,
+        category : categoryReducer
     }
 })
